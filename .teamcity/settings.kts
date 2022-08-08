@@ -41,9 +41,11 @@ object Anothertodolist_Build : BuildType({
 
     steps {
         maven {
+            name = "boggles Maven Build Step"
             goals = "clean test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
             mavenVersion = bundled_3_6()
+            jdkHome = "%env.JDK_11_0_x64%"
         }
     }
 
