@@ -50,6 +50,11 @@ object Anothertodolist_Build : BuildType({
 
     triggers {
         vcs {
+            quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_CUSTOM
+            quietPeriod = 30
+            perCheckinTriggering = true
+            groupCheckinsByCommitter = true
+            enableQueueOptimization = false
         }
     }
 })
