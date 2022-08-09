@@ -73,5 +73,8 @@ object Anothertodolist_Build : BuildType({
             requiredSpace = "6gb"
             failBuild = true
         }
+	perfmon {
+	}
     }
+
 })
