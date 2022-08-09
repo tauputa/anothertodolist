@@ -3,9 +3,9 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 version = "2021.1"
 project {
-    buildType(Anothertodolist_Build)
+    buildType(Build)
 }
-object Anothertodolist_Build : BuildType({
+object Build : BuildType({
     id("Build")
     name = "Build"
     vcs {
