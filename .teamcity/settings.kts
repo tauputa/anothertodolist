@@ -62,10 +62,8 @@ object Anothertodolist_Build : BuildType({
     }
     features {
         notifications {
-            notifierSettings = slackNotifier {
-                connection = "PROJECT_EXT_119"
-                sendTo = "U02KJPJ764V"
-                messageFormat = simpleMessageFormat()
+            notifierSettings = emailNotifier {
+                email = "tauputa@gmail.com"
             }
             buildStarted = true
             buildFailed = true
