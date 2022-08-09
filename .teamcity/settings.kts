@@ -19,6 +19,9 @@ object Package : BuildType({
             mavenVersion = bundled_3_6()
         }
     }
+    dependencies{
+        snapshot(Build){}
+    }
     triggers {
         vcs {
         }
