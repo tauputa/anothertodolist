@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildFeatures.freeDiskSpace
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildFeatures.notifications
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.VcsTrigger
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
@@ -60,6 +61,16 @@ object Anothertodolist_Build : BuildType({
         }
     }
     features {
+        notifications {
+            notifierSettings = slackNotifier {
+                connection = "PROJECT_EXT_119"
+                sendTo = "U02KJPJ764V"
+                messageFormat = simpleMessageFormat()
+            }
+            buildStarted = true
+            buildFailed = true
+            buildFinishedSuccessfully = true
+        }
         freeDiskSpace {
             requiredSpace = "6gb"
             failBuild = true
