@@ -2,28 +2,29 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.*
 
 version = "2021.1"
 
-project {
-	buildType(Boggles_Build)
-}
+        project {
 
-object Boggles_Build: BuildType({
-	id("Build")
-	name = "Build"
+            buildType(Anothertodolist_Build)
+        }
 
-	vcs {
-		root(DslContext.settingsRoot)	
-	}
+object Anothertodolist_Build : BuildType({
+    id("Build")
+    name = "Build"
 
-	steps {
-		maven {
-			goals = "clean test"
-			runnerArgs = "-Dmaven.test.failure.ignore=true"
-			mavenVersion = bundled_3_6()
-		}
-	}
+    vcs {
+        root(DslContext.settingsRoot)
+    }
 
-	triggers {
-		vcs{
-		}
-	}
+    steps {
+        maven {
+            goals = "clean test"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+            mavenVersion = bundled_3_6()
+        }
+    }
+
+    triggers {
+            vcs {
+            }
+    }
 })
